@@ -9,6 +9,8 @@
 </head>
 
 <body>
+<div class="menu-toggle">&#9776;</div>
+
     <header id="header">
         <nav>
             <ul>
@@ -137,11 +139,21 @@
             </div>
         </div>
     </section>
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('nav ul');
 
-
-
+menuToggle.addEventListener('click', () => {
+  if(navUl.style.left === '0px') {
+    navUl.style.left = '-250px';
+    document.body.classList.remove('menu-open');
+  } else {
+    navUl.style.left = '0px';
+    document.body.classList.add('menu-open');
+  }
+});
+</script>
 </body>
-
-
 </html>
+
 
