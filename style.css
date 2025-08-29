@@ -365,8 +365,206 @@ nav{
   color: #000000;
   transform: scale(1.1) rotate(1deg);
 }
+/* Hide nav links and show hamburger on small screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -250px; /* hide off-screen */
+        width: 250px;
+        height: 100%;
+        background: #000;
+        padding-top: 60px;
+        transition: 0.3s;
+        z-index: 2000;
+    }
 
+    nav ul li {
+        margin: 20px 0;
+        text-align: center;
+    }
 
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 15px;
+        right: 20px;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        z-index: 3000;
+    }
 
-/* --- Image subtle float animation --- */
+    /* Overlay effect */
+    body.menu-open {
+        overflow: hidden;
+    }
+}
+
+/* Centering Contact section */
+@media (max-width: 768px) {
+    #contact h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 90%;
+        margin: 0;
+        text-align: center;
+    }
+}
+
+/* Home section scaling */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-text, .home-img {
+        max-width: 90%;
+    }
+
+    .home-img img {
+        width: 200px;
+        height: auto;
+    }
+}
+
+/* Hide default nav scroll, style left-side menu */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+@media (max-width: 768px) {
+    /* hamburger button */
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 15px;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        z-index: 3000;
+    }
+
+    /* off-canvas menu on left */
+    nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: -250px;  /* hidden by default */
+        width: 250px;
+        height: 100%;
+        background: #000;
+        padding-top: 60px;
+        gap: 20px;
+        transition: 0.3s;
+        z-index: 2000;
+    }
+
+    nav ul li {
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    /* prevent body scroll when menu open */
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    /* Center home section content */
+    .home-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-text, .home-img {
+        max-width: 90%;
+    }
+
+    .home-img img {
+        width: 200px;
+        height: auto;
+    }
+
+    /* Skills and education boxes center */
+    .education, .skills, .experience {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .education-box, .skill-box {
+        width: 90%;
+        padding: 12px 20px;
+        font-size: 16px;
+    }
+
+    /* Contact section centered */
+    #contact h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 90%;
+        margin: 0;
+        text-align: center;
+    }
+
+    #skill-head {
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-img img {
+        width: 150px;
+    }
+
+    .home-text p {
+        font-size: 0.95rem;
+    }
+
+    .education-box, .skill-box {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    #skill-head {
+        font-size: 28px;
+    }
+
+    section {
+        padding: 15px 10px;
+    }
+}
+/* Hide hamburger on desktop */
+.menu-toggle {
+    display: none;
+}
+
+/* Show hamburger only on small screens */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+}
 
